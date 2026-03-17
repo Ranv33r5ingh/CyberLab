@@ -11,12 +11,12 @@ Each run produces genuinely varied data via a seeded variation engine that rando
 ## Architecture
 
 CALDERA C2 Server
-│
-├── ubuntu-webserver (nginx + php-fpm, port 80)
-├── ubuntu-dbserver (postgresql + redis, ports 5432/6379)
-├── ubuntu-devmachine (node.js, port 3000)
-├── ubuntu-cirunner (jenkins-sim, port 8080)
-└── ubuntu-mailserver (postfix + dovecot, ports 25/143)
+|
+|-- ubuntu-webserver (nginx + php-fpm, port 80)
+|-- ubuntu-dbserver (postgresql + redis, ports 5432/6379)
+|-- ubuntu-devmachine (node.js, port 3000)
+|-- ubuntu-cirunner (jenkins-sim, port 8080)
+|-- ubuntu-mailserver (postfix + dovecot, ports 25/143)
 
 Each container runs:
 - A role-specific service stack
@@ -85,20 +85,20 @@ docker stop target-web-server-01 target-db-server-02 \
 ## Project Structure
 
 CyberLab/
-├── images/
-│   ├── shared/
-│   │   ├── monitor.py           # System snapshot daemon
-│   │   └── variation_engine.py  # Per-run state randomizer
-│   ├── web-server/
-│   ├── db-server/
-│   ├── dev-machine/
-│   ├── ci-runner/
-│   └── mail-server/
-├── orchestrator.py              # Full multi-target pipeline
-├── phase4_output.py             # Single-target output generator
-├── build_images.sh              # Build all 5 Docker images
-├── output/                      # Generated data (gitignored)
-└── caldera/                     # CALDERA submodule (gitignored)
+|-- images/
+|   |-- shared/
+|   |   |-- monitor.py           # System snapshot daemon
+|   |   |-- variation_engine.py  # Per-run state randomizer
+|   |-- web-server/
+|   |-- db-server/
+|   |-- dev-machine/
+|   |-- ci-runner/
+|   |-- mail-server/
+|-- orchestrator.py              # Full multi-target pipeline
+|-- phase4_output.py             # Single-target output generator
+|-- build_images.sh              # Build all 5 Docker images
+|-- output/                      # Generated data (gitignored)
+|-- caldera/                     # CALDERA submodule (gitignored)
 
 ### Diversity Per Run
 The variation engine seeds randomness from hostname + UTC timestamp, producing different combinations each run:
