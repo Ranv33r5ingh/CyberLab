@@ -1,0 +1,57 @@
+# Generated output — contains real attack data and system profiles
+output/
+
+# CALDERA installation — clone separately, contains DB and keys
+caldera/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Docker build artifacts copied from shared/
+images/web-server/monitor.py
+images/web-server/variation_engine.py
+images/db-server/monitor.py
+images/db-server/variation_engine.py
+images/dev-machine/monitor.py
+images/dev-machine/variation_engine.py
+images/ci-runner/monitor.py
+images/ci-runner/variation_engine.py
+images/mail-server/monitor.py
+images/mail-server/variation_engine.py
+images/ci-runner/jenkins_sim.py
+
+# Credentials and secrets
+*.key
+*.pem
+*.env
+.env
+!.env.example
+conf/
+*.yml.local
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+fix_api.py
+
+# Obsolete pre-diversity single target image
+target-image/
+
+# Build debugging artifacts
+*.patch
