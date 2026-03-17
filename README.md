@@ -91,18 +91,18 @@ docker stop target-web-server-01 target-db-server-02 \
 - CyberLab/
     - images/
         - shared/
-            - monitor.py            # System snapshot daemon
-            - variation_engine.py   # Per-run state randomizer
+            - monitor.py ---------- # System snapshot daemon
+            - variation_engine.py - # Per-run state randomizer
         - web-server/
         - db-server/
         - dev-machine/
         - ci-runner/
         - mail-server/
-    - orchestrator.py               # Full multi-target pipeline
-    - phase4_output.py              # Single-target output generator
-    - build_images.sh               # Build all 5 Docker images
-    - output/                       # Generated data (gitignored)
-    - caldera/                      # CALDERA submodule (gitignored)
+    - orchestrator.py ------------- # Full multi-target pipeline
+    - phase4_output.py ------------ # Single-target output generator
+    - build_images.sh ------------- # Build all 5 Docker images
+    - output/ --------------------- # Generated data (gitignored)
+    - caldera/ -------------------- # CALDERA submodule (gitignored)
 
 ### Diversity Per Run
 The variation engine seeds randomness from hostname + UTC timestamp, producing different combinations each run:
